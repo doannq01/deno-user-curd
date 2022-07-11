@@ -1,0 +1,15 @@
+### Ping server
+
+GET http://127.0.0.1:8000/ping
+
+{
+
+}
+
+### Get data
+
+GET http://127.0.0.1:8000/users?offset=20&limit=50
+
+{
+
+}
