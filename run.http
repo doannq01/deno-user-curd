@@ -1,15 +1,40 @@
-### Ping server
+@domain = http://127.0.0.1:8000
 
-GET http://127.0.0.1:8000/ping
+### Get Access Token
+POST {{domain}}/login
+Content-Type: application/json
+
+{
+    "username": "username",
+    "password":"password"
+}
+
+### Ping server
+GET {{domain}}/ping
 
 {
 
 }
 
 ### Get data
-
-GET http://127.0.0.1:8000/users?offset=20&limit=50
+GET {{domain}}/users?offset=0&limit=10
+Content-Type: application/json
+Authorization: bearer eNi2VybmFtZSIsImV4cCI6MTY1OTI3MTQwMjg5M30.UeDgerwx3JWI66a-vZpdgjCEv93s_q-hllgO5A8E53Y
 
 {
 
+}
+
+### New User
+
+POST {{domain}}/user
+Content-Type: application/json
+Authorization: bearer eNi2VybmFtZSIsImV4cCI6MTY1OTI3MTQwMjg5M30.UeDgerwx3JWI66a-vZpdgjCEv93s_q-hllgO5A8E53Y
+
+
+{
+    "first_name": "doan",
+    "last_name": "nguyen",
+    "email": "doannq03@gmail.com",
+    "birth_day": "2001/6/18"
 }

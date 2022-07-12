@@ -41,11 +41,11 @@ export const errorHandler = async (
     try {
         await next()
     } catch (err) {
-        const {message, name, path, type} = err
+        const { message, name, path, type } = err
         const status =
             err.status || err.statusCode || Status.InternalServerError
 
         ctx.response.status = status
-        ctx.response.body = {message, name, path, type, status}
+        ctx.response.body = { message, name, path, type, status }
     }
 }
